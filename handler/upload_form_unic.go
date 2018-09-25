@@ -154,6 +154,8 @@ func UploadFormFileUnic(w http.ResponseWriter, r *http.Request, typeSend, fileUi
 		boolFileExist = false
 	}
 
+	fmt.Println("path local: ", os.Getwd()+" :::path-upload::: "+PATH_UPLOAD)
+
 	// os.Exit(0)
 	if !util.CreateDirIfNotExist(PATH_UPLOAD) {
 
