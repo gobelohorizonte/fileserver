@@ -13,7 +13,6 @@ import (
 	"strings"
 )
 
-//
 func ClaimsData(token string) (string, string, string, string) {
 
 	if token != "" {
@@ -26,7 +25,6 @@ func ClaimsData(token string) (string, string, string, string) {
 
 		if err != nil || !parsedToken.Valid {
 
-			//HttpWriteJson(w, r, "error", "Your token has expired!", http.StatusAccepted)
 			return "", "", "", ""
 		}
 
@@ -34,7 +32,6 @@ func ClaimsData(token string) (string, string, string, string) {
 
 		if !ok {
 
-			//HttpWriteJson(w, r, "error", "Token has something wrong!", http.StatusAccepted)
 			return "", "", "", ""
 		}
 
@@ -42,8 +39,7 @@ func ClaimsData(token string) (string, string, string, string) {
 		// validate user before, is there a user?
 		//if !DynamodbValidUserAccess(claims.User) {
 		if !repo.PgUserValid(claims.User) {
-			//msgTmp = `this user [` + claims.User + `] no longer exists, check out your access token`
-			//return false, `{"status":"error","msg":"` + msgTmp + `"}`, msgTmp
+
 			return "", "", "", ""
 		}
 		//review implementation, performance
@@ -78,17 +74,12 @@ func GetSplitTokenJwt(w http.ResponseWriter, r *http.Request) string {
 		Authorization = r.Header.Get("Access-Control-Allow-Origin")
 	}
 
-	//fmt.Println(r.Header.Get("Access-Control-Request-Headers"))
-	//fmt.Println(r.Header.Get("bearer"))
-	//fmt.Println("auth: ", Authorization)
-
 	if Authorization != "" {
 
 		auth := strings.SplitN(Authorization, " ", 2)
 
 		if len(auth) != 2 || strings.TrimSpace(strings.ToLower(auth[0])) != "bearer" {
 
-			//HttpWriteJson(w, r, "error", http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
 			return ""
 		}
 
