@@ -21,6 +21,7 @@ RUN go get -u github.com/jeffotoni/fileserver/repo
 RUN go get -u github.com/jeffotoni/fileserver/util
 
 WORKDIR /go/src/fileserver
+
 COPY . .
 
 # RUN go get -d -v ./...
