@@ -3,6 +3,11 @@
 FileServer, um protótipo que tem como objetivo apresentar como funciona um storage para uploads de arquivos. É um exemplo de como um server irá comportar para armazenar arquivos em seu storage ou em buckets.
 Este projeto é puramente didâtico, todo construído com stdlib nativa de Go, usamos alguns libs externas para tratarmos JWT e tollbooth/limiter.
 
+## Banco de Dados
+
+Estamos usando Postgresql para simulções, uma tabela de login, pasta, file e ambiente de trabalho.
+A versão do postgresql é psql (PostgreSQL) 9.6.9.
+
 ## Endpoints
 
 login, / create / user, / ping, / hello, / upload, / download serão os principais endpoints que serão gerenciados.
@@ -70,6 +75,27 @@ go get github.com/dgrijalva/jwt-go
 		- storage
 ```
 
+# Create User e Update senha
+
+```pg
+
+$ createuser fileserver -U postgres -O fileserver -E UTF-8 -T template0
+
+$ psql -d template1 -U postgres
+
+template1=# alter user fileserver password '1234';
+template1=# \q
+
+```
+# Create User e Update senha
+
+```pg
+
+$ createdb fileserver -U postgres -O fileserver -E UTF-8 -T template0
+
+$ psql -d fileserver -f sql/fileserver.sql
+
+```
 
 # A API retorna o status das solicitações
 
