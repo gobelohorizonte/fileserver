@@ -32,9 +32,19 @@ go get github.com/dgrijalva/jwt-go
 
 - fileserver
 	- certs
+	 	- certs.go
+	
 	- dockerfiles
 		- Dockerfile
 		- Deploy.sh
+	
+	- handler
+		- hello.go
+		- login.go
+		- ping.go
+		- upload.go
+		- upload_form_unic.go
+
 	- pkg
 		- auth
 		- authi
@@ -48,6 +58,12 @@ go get github.com/dgrijalva/jwt-go
 		- claim.go
 		- responsetoken.go
 		- user.go
+
+	- route
+		- apiconf.go
+		- apishow.go
+		- route.go	
+
 	- src
 		- fileserver
 			main.go	
