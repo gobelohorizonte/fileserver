@@ -13,7 +13,7 @@ package main
 //
 //
 import (
-	"github.com/jeffotoni/fileserver/route"
+	route "github.com/jeffotoni/fileserver/route"
 	"os"
 )
 

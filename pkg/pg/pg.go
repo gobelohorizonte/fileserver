@@ -3,6 +3,7 @@ package pg
 import (
 	"fmt"
 	"log"
+	"os"
 	"strings"
 	"sync"
 )
@@ -22,7 +23,7 @@ const LayoutDateLog = "2006-01-02 15:04:05"
 // const LayoutDate = "2006-01-02"
 // const LayoutHour = "15:04:05"
 
-const (
+var (
 	DB_HOST_1     = "localhost"
 	DB_NAME_1     = "fileserver"
 	DB_USER_1     = "fileserver"
@@ -36,7 +37,7 @@ const (
 // caso tenhamos varios
 // bancos em varios hosts
 // diferentes
-const (
+var (
 	DB_HOST_2     = "192.168.0.43"
 	DB_NAME_2     = "outro_banco"
 	DB_USER_2     = "user"
@@ -68,6 +69,13 @@ var (
 var (
 	pool = &cache{}
 )
+
+func init() {
+
+	db_host_1 := os.Getenv("DB_HOST_1")
+	DB_HOST_1 = db_host_1
+
+}
 
 // put sync.Map
 func (c *cache) put(key, value interface{}) {
@@ -123,7 +131,7 @@ func PgConnect(DB_NAME, DB_HOST, DB_USER, DB_PASSWORD, DB_PORT, DB_SORCE string)
 		DBINFO := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
 			DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_SSL)
 
-		// log.Println(DBINFO)
+		log.Println(DBINFO)
 
 		// func para ser executada
 		// dentro do loadStore

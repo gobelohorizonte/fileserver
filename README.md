@@ -38,11 +38,7 @@ go get -u github.com/dgrijalva/jwt-go
 - fileserver
 	- certs
 	 	- certs.go
-	
-	- dockerfiles
-		- Dockerfile
-		- Deploy.sh
-	
+
 	- handler
 		- hello.go
 		- login.go
@@ -71,7 +67,9 @@ go get -u github.com/dgrijalva/jwt-go
 
 	- src
 		- fileserver
-			main.go	
+			- main.go	
+			- Dockerfile
+
 		- storage
 ```
 
