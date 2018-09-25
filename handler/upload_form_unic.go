@@ -29,6 +29,7 @@ import (
 	"github.com/jeffotoni/fileserver/pkg/cryptf"
 	"github.com/jeffotoni/fileserver/pkg/logf"
 	"github.com/jeffotoni/fileserver/repo"
+	"github.com/jeffotoni/fileserver/util"
 )
 
 // the multipart / form-data format, ie comes from a form
@@ -154,6 +155,11 @@ func UploadFormFileUnic(w http.ResponseWriter, r *http.Request, typeSend, fileUi
 	}
 
 	// os.Exit(0)
+	if !util.CreateDirIfNotExist(PATH_UPLOAD) {
+
+		msgTmp = "nao conseguimos criar o dreitorio " + PATH_UPLOAD + " para armazenar os arquivos."
+		return false, `{"status":"error","msg":"` + msgTmp + `"}`, msgTmp
+	}
 
 	///create dir to key
 	pathUpKeyUser := PATH_UPLOAD + "/" + UidUser

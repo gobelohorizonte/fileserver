@@ -38,6 +38,48 @@ func GetWdLocal(level int) string {
 	return pathNewOrg
 }
 
+//  Exist only file
+func FileExist(name string) bool {
+
+	//if _, err := os.Stat(name); os.IsNotExist(err) {
+	if stat, err := os.Stat(name); err == nil && !stat.IsDir() {
+
+		return true
+	}
+
+	return false
+}
+
+func DirExist(path string) bool {
+
+	//if _, err := os.Stat(path); err == nil {
+	if stat, err := os.Stat(path); err == nil && stat.IsDir() {
+
+		return true
+	}
+
+	return false
+
+	// if _, err := os.Stat("/path/to/whatever"); os.IsNotExist(err) {
+	// 	// path/to/whatever does not exist
+	// }
+}
+
+func CreateDirIfNotExist(dir string) bool {
+
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+
+		err = os.MkdirAll(dir, 0755)
+
+		if err != nil {
+			//log.Save.Println(err)
+			return false
+		}
+	}
+
+	return true
+}
+
 //
 func GetExistFile(pathNewOrg string) string {
 

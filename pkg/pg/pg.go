@@ -131,7 +131,7 @@ func PgConnect(DB_NAME, DB_HOST, DB_USER, DB_PASSWORD, DB_PORT, DB_SORCE string)
 		DBINFO := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
 			DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_SSL)
 
-		log.Println(DBINFO)
+		//log.Println(DBINFO)
 
 		// func para ser executada
 		// dentro do loadStore

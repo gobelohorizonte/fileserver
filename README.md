@@ -95,6 +95,24 @@ $ psql -d fileserver -f sql/fileserver.sql
 
 ```
 
+## Install FileServer
+
+```go
+
+$ cd src/fileserver
+$ go install
+$ fileserver
+
+```
+
+## Docker FileServer
+
+```docker
+
+$ docker run -d -e PORT_SERVER=5009 -e DB_HOST_1=localhost -p 5009:5009 jeffotoni/fileserver
+
+```
+
 # A API retorna o status das solicitações
 
 200 - OK. Successful.
