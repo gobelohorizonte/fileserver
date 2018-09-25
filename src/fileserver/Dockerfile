@@ -8,17 +8,17 @@ RUN go get -u golang.org/x/crypto/bcrypt
 RUN go get -u github.com/dgrijalva/jwt-go
 
 RUN go get -u github.com/jeffotoni/fileserver/route
-RUN go get -u github.com/jeffotoni/fileserver/handler
-RUN go get -u github.com/jeffotoni/fileserver/models
-RUN go get -u github.com/jeffotoni/fileserver/pkg/auth
-RUN go get -u github.com/jeffotoni/fileserver/pkg/authi
-RUN go get -u github.com/jeffotoni/fileserver/pkg/cors
-RUN go get -u github.com/jeffotoni/fileserver/pkg/cryptf
-RUN go get -u github.com/jeffotoni/fileserver/pkg/gcolor
-RUN go get -u github.com/jeffotoni/fileserver/pkg/logf
-RUN go get -u github.com/jeffotoni/fileserver/pkg/pg
-RUN go get -u github.com/jeffotoni/fileserver/repo
-RUN go get -u github.com/jeffotoni/fileserver/util
+#RUN go get -u github.com/jeffotoni/fileserver/handler
+#RUN go get -u github.com/jeffotoni/fileserver/models
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/auth
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/authi
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/cors
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/cryptf
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/gcolor
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/logf
+#RUN go get -u github.com/jeffotoni/fileserver/pkg/pg
+#RUN go get -u github.com/jeffotoni/fileserver/repo
+#RUN go get -u github.com/jeffotoni/fileserver/util
 
 WORKDIR /go/src/fileserver
 
