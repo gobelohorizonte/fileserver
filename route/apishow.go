@@ -139,7 +139,7 @@ func ShowScreen() {
 
 	stringEnableUser := gcolor.CyanCor("[Ukk-debug] PUT        ") + EnableUser + gcolor.RedCor("                --> EnableUser(2 Handlers)")
 
-	stringDownload := gcolor.CyanCor("[Ukk-debug] POST       ") + Download + gcolor.YellowCor("              --> Download(2 Handlers)")
+	stringDownload := gcolor.CyanCor("[Ukk-debug] POST       ") + Download + gcolor.RedCor("              --> Download(2 Handlers)")
 
 	//
 	// Showing on the screen

@@ -22,13 +22,13 @@ O download verifica se o arquivo é local ou se já foi enviado para a nuvem, se
 
 ## Dependencies
 
-go get github.com/didip/tollbooth
+go get -u github.com/didip/tollbooth
 
-go get github.com/lib/pq
+go get -u github.com/lib/pq
 
-go get golang.org/x/crypto/bcrypt
+go get -u golang.org/x/crypto/bcrypt
 
-go get github.com/dgrijalva/jwt-go
+go get -u github.com/dgrijalva/jwt-go
 
 
 ## Estrutura do Programa
