@@ -73,7 +73,11 @@ var (
 func init() {
 
 	db_host_1 := os.Getenv("DB_HOST_1")
-	DB_HOST_1 = db_host_1
+
+	if db_host_1 != "" {
+
+		DB_HOST_1 = db_host_1
+	}
 
 }
 
