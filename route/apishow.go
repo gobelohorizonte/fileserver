@@ -23,7 +23,6 @@ import (
 import (
 	config "github.com/jeffotoni/fileserver/config"
 	"github.com/jeffotoni/fileserver/pkg/gcolor"
-	//"github.com/jeffotoni/fileserver/pkg/pg"
 )
 
 // Screen Logo
@@ -179,8 +178,5 @@ func ShowScreen() {
 
 	fmt.Println(stringDownload)
 
-	// gcolor.Yellow.Cprintln("DB_HOST_1:" + pg.DB_HOST_1)
-
 	gcolor.Yellow.Cprintln(SizeString)
-
 }
