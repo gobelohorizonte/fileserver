@@ -23,7 +23,7 @@ func PgUserValid(Email string) bool {
 
 	} else {
 
-		log.Println("error ao fazer connect goPgUpdate com Db..", interf, " Host: ", pg.DB_HOST_1)
+		log.Println("error ao fazer connect goPgUpdate com Db..", interf)
 		return false
 	}
 
