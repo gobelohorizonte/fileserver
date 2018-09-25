@@ -101,9 +101,6 @@ func maxClientsFunc(h http.Handler, n int) http.HandlerFunc {
 	}
 }
 
-//
-//
-//
 func Handlers() {
 
 	// &limiter.ExpirableOptions{DefaultExpirationTTL: time.Hour}
@@ -174,7 +171,7 @@ func Handlers() {
 	//
 	confServer = &http.Server{
 
-		Addr: ":" + ServerPort,
+		Addr: ":" + PORT_SERVER,
 
 		Handler: handlerCors,
 		//ReadTimeout:    30 * time.Second,
@@ -186,7 +183,8 @@ func Handlers() {
 		WriteTimeout: 10 * time.Second,
 	}
 
-	//
+	// start
+	// service
 	go func() {
 
 		// service connections
@@ -205,15 +203,20 @@ func Handlers() {
 	<-quit
 	log.Println("Shutdown Server ...")
 
+	// context timeout, cancel
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
+	// shutdown CTRL+C
 	if err := confServer.Shutdown(ctx); err != nil {
 
 		log.Fatal("Server Shutdown:", err)
 	}
 
+	// log exist
 	log.Println("Server exist")
+
+	// listenAndServer
 	log.Fatal(confServer.ListenAndServe())
 
 }

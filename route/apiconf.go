@@ -30,6 +30,10 @@ var (
 	CorsAllowedHeaders = []string{"*"}
 )
 
+var (
+	PORT_SERVER = "5000"
+)
+
 const (
 	maxClients = 50000 // simultaneos
 
@@ -41,8 +45,6 @@ const (
 	GB int = 1000 << (10 * iota)
 
 	Protocol = "http://"
-
-	ServerPort = "5000"
 
 	Schema = "localhost"
 
@@ -147,14 +149,16 @@ const (
 	//
 	// POST
 	HandlerConfirmEmail = "/v1/user/confirm_email"
+)
+
+var (
+	//
+	//
+	//
+	HttpConfirmEmail = Protocol + Schema + ":" + PORT_SERVER + "" + HandlerConfirmEmail
 
 	//
 	//
 	//
-	HttpConfirmEmail = Protocol + Schema + ":" + ServerPort + "" + HandlerConfirmEmail
-
-	//
-	//
-	//
-	HttpRestoreAccount = Protocol + Schema + ":" + ServerPort + "" + HandlerRestoreAccount
+	HttpRestoreAccount = Protocol + Schema + ":" + PORT_SERVER + "" + HandlerRestoreAccount
 )

@@ -39,67 +39,67 @@ func ShowScreen() {
 	//
 	// Basic Authentication
 	//
-	Login := Protocol + Schema + ":" + ServerPort + "" + HandlerLogin
+	Login := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerLogin
 
 	//
 	//
 	//
-	Ping := Protocol + Schema + ":" + ServerPort + "" + HandlerPing
+	Ping := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerPing
 
 	//
 	//
 	//
-	Hello := Protocol + Schema + ":" + ServerPort + "" + HandlerHello
-
-	//
-	// Basic Authentication, handler
-	//
-	CreateUser := Protocol + Schema + ":" + ServerPort + "" + HandlerCreateUser
+	Hello := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerHello
 
 	//
 	// Basic Authentication, handler
 	//
-	Upload := Protocol + Schema + ":" + ServerPort + "" + HandlerUpload
+	CreateUser := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerCreateUser
+
+	//
+	// Basic Authentication, handler
+	//
+	Upload := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerUpload
 
 	//
 	//
 	//
-	UploadRemove := Protocol + Schema + ":" + ServerPort + "" + HandlerUploadRemoveDefinitive
+	UploadRemove := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerUploadRemoveDefinitive
 
 	//
 	//
 	//
-	UploadRemoveTrash := Protocol + Schema + ":" + ServerPort + "" + HandlerUploadRemoveFileTrash
+	UploadRemoveTrash := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerUploadRemoveFileTrash
 
 	//
 	//
 	//
-	Confirmemail := Protocol + Schema + ":" + ServerPort + "" + HandlerConfirmEmail
+	Confirmemail := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerConfirmEmail
 
 	//
 	//
 	//
-	CloseAccount := Protocol + Schema + ":" + ServerPort + "" + HandlerCloseAccount
+	CloseAccount := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerCloseAccount
 
 	//
 	// HandlerRestoreAccount
 	//
-	RestoreAccount := Protocol + Schema + ":" + ServerPort + "" + HandlerRestoreAccount
+	RestoreAccount := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerRestoreAccount
 
 	//
 	// HandlerDisableUser
 	//
-	DisableUser := Protocol + Schema + ":" + ServerPort + "" + HandlerDisableUser
+	DisableUser := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerDisableUser
 
 	//
 	// HandlerDisableUser
 	//
-	EnableUser := Protocol + Schema + ":" + ServerPort + "" + HandlerEnableUser
+	EnableUser := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerEnableUser
 
 	//
 	//
 	//
-	Download := Protocol + Schema + ":" + ServerPort + "" + HandlerDownload
+	Download := Protocol + Schema + ":" + PORT_SERVER + "" + HandlerDownload
 
 	//
 	//
@@ -113,7 +113,7 @@ func ShowScreen() {
 
 	// [GIN-debug] POST   /v1/login                 --> main.loginEndpoint (3 handlers)
 
-	stringSchema := "⇨ http server started on " + Schema + ":" + ServerPort
+	stringSchema := "⇨ http server started on " + Schema + ":" + PORT_SERVER
 
 	stringLogin := gcolor.CyanCor("[Ukk-debug] POST       ") + Login + gcolor.YellowCor("                 --> Login(2 Handlers)")
 
